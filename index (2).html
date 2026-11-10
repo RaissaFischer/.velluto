@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Spazio Velluto · Raissa Fischer</title>
+<meta name="theme-color" content="#FAF9F6">
+<meta property="og:title" content="Spazio Velluto · Raissa Fischer">
+<meta property="og:description" content="Escova, corte, tratamento e repigmentação. Agende pelo WhatsApp.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Crect width=%2764%27 height=%2764%27 fill=%27%23064B4D%27/%3E%3Ctext x=%2732%27 y=%2744%27 font-size=%2734%27 text-anchor=%27middle%27 fill=%27%23DDEFE8%27 font-family=%27Georgia%27 font-style=%27italic%27%3ESV%3C/text%3E%3C/svg%3E">
+<meta name="description" content="Spazio Velluto — salão de beleza com atendimento personalizado por Raissa Fischer.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&family=Figtree:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --teal:#064B4D; --mint:#DDEFE8; --ivory:#FAF9F6; --beige:#F1EEE7; --sage:#7B8580; --graphite:#263536; --muted:#5E6A65;
+  --wine:#064B4D; --deep:#263536; --blush:#DDEFE8; --cream:#FAF9F6; --paper:#FFFFFF;
+  --gold:#7B8580; --gold-l:#DDEFE8; --ink:#263536; --soft:#5E6A65;
+  --display:'Bodoni Moda', Georgia, serif; --body:'Figtree', system-ui, sans-serif;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+html{ scroll-behavior:smooth; scroll-padding-top:70px; }
+*,*::before,*::after{ box-sizing:inherit; }
+body{ margin:0; font-family:var(--body); color:var(--ink); background:var(--cream); -webkit-font-smoothing:antialiased; overflow-x:hidden; line-height:1.7; }
+a{ color:inherit; text-decoration:none; }
+svg{ display:block; max-width:100%; }
+h1,h2,h3{ font-family:var(--display); font-weight:400; margin:0; line-height:1.05; }
+p{ margin:0; color:var(--soft); max-width:60ch; }
+.wrap{ max-width:1200px; margin:0 auto; padding:0 28px; }
+section{ padding:128px 0; }
+:focus-visible{ outline:2px solid var(--gold); outline-offset:3px; }
+.btn{ display:inline-flex; align-items:center; justify-content:center; gap:10px; padding:16px 34px; border:1px solid var(--gold); border-radius:999px; font:500 .92rem var(--body); cursor:pointer; background:transparent; color:inherit; transition:background .3s,color .3s,border-color .3s; }
+.btn-fill{ background:var(--gold); color:var(--deep); }
+.btn-fill:hover{ background:var(--gold-l); }
+.btn-line:hover{ background:var(--gold); color:var(--deep); }
+.btn-wine{ background:var(--wine); border-color:var(--wine); color:var(--paper); }
+.btn-wine:hover{ background:var(--deep); }
+.skip{ position:absolute; left:16px; top:-60px; z-index:200; background:var(--gold); color:var(--deep); padding:12px 20px; border-radius:2px; font-weight:500; }
+.skip:focus{ top:12px; }
+.wrap>*{ min-width:0; }
+input,select{ width:100%; min-width:0; min-height:44px; }
+.f-links a,.c-grid a:not(.btn){ display:inline-block; padding:10px 0; }
+.status{ grid-column:1/-1; font-size:.9rem; color:var(--wine); min-height:1.4em; margin:0; }
+.rv{ opacity:0; transition:opacity .8s ease; }
+.rv.in{ opacity:1; }
+
+/* Cabeçalho */
+header{ position:fixed; inset:0 0 auto; z-index:100; padding-top:env(safe-area-inset-top,0px); color:var(--cream); transition:background .4s,color .4s,box-shadow .4s; }
+header.solid{ background:rgba(250,249,246,.95); backdrop-filter:blur(8px); color:var(--deep); box-shadow:0 1px 0 rgba(6,75,77,.12); }
+nav{ max-width:1200px; margin:0 auto; padding:18px 28px; display:flex; align-items:center; gap:36px; }
+.logo{ font-family:var(--display); font-size:1.45rem; letter-spacing:.04em; margin-right:auto; }
+.links{ display:flex; gap:30px; list-style:none; margin:0; padding:0; font-size:.9rem; }
+.links a{ opacity:.85; transition:opacity .2s; } .links a:hover{ opacity:1; }
+.nav-cta{ padding:10px 24px; font-size:.85rem; }
+header.solid .nav-cta{ border-color:var(--wine); color:var(--wine); } header.solid .nav-cta:hover{ background:var(--wine); color:var(--paper); }
+.burger{ display:none; background:none; border:0; padding:10px 6px; min-width:44px; min-height:44px; cursor:pointer; color:inherit; }
+.burger span{ display:block; width:24px; height:1.5px; background:currentColor; margin:6px 0; }
+.mmenu{ position:fixed; inset:0; z-index:120; background:var(--deep); color:var(--cream); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:26px; transform:translateY(-100%); transition:transform .45s ease; }
+.mmenu.open{ transform:none; }
+.mmenu a{ font-family:var(--display); font-size:2rem; }
+.mclose{ position:absolute; top:22px; right:26px; background:none; border:0; color:var(--cream); font-size:2rem; cursor:pointer; }
+
+/* Hero */
+.hero{ background:var(--deep); color:var(--cream); min-height:88svh; display:flex; flex-direction:column; justify-content:center; padding:120px 0 56px; position:relative; overflow:hidden; }
+.hero::after{ content:''; position:absolute; width:620px; height:620px; right:-180px; top:-160px; border:1px solid rgba(221,239,232,.22); border-radius:50%; }
+.hero .wrap{ width:100%; display:grid; grid-template-columns:1.15fr .85fr; gap:70px; align-items:center; position:relative; z-index:1; }
+.hero h1{ font-size:clamp(4rem,10.5vw,9rem); letter-spacing:-.03em; line-height:.88; }
+.hero h1 span{ display:block; }
+.hero h1 span+span{ padding-left:.55em; font-style:italic; color:var(--gold-l); }
+.hero-tag{ font-family:var(--display); font-style:italic; font-size:1.5rem; margin:34px 0 14px; color:var(--blush); }
+.hero p.d{ color:rgba(250,249,246,.72); margin-bottom:38px; }
+.hero-actions{ display:flex; gap:14px; flex-wrap:wrap; }
+.arch{ aspect-ratio:3/4; max-width:430px; margin-left:auto; border-radius:999px 999px 6px 6px; background:linear-gradient(170deg,var(--blush),var(--cream) 70%); border:1px solid var(--gold); padding:10px; position:relative; }
+.arch-in{ height:100%; border-radius:999px 999px 2px 2px; border:1px solid rgba(82,102,101,.55); display:flex; align-items:center; justify-content:center; }
+.arch svg{ width:78%; }
+.arch-cap{ position:absolute; left:-26px; bottom:34px; background:var(--gold); color:var(--deep); padding:12px 20px; font-size:.82rem; font-weight:500; border-radius:2px; }
+@keyframes rise{ from{ opacity:0; transform:translateY(26px); } to{ opacity:1; transform:none; } }
+.hero h1 span,.hero-tag,.hero p.d,.hero-actions,.arch{ animation:rise 1s cubic-bezier(.2,.7,.2,1) both; }
+.hero h1 span+span{ animation-delay:.25s; } .hero-tag{ animation-delay:.5s; } .hero p.d{ animation-delay:.65s; } .hero-actions{ animation-delay:.8s; } .arch{ animation-delay:.35s; }
+
+.hero-menu{ position:relative; z-index:1; width:100%; max-width:1200px; margin:72px auto 0; padding:0 28px; }
+.hero-menu-g{ display:grid; grid-template-columns:repeat(5,1fr); border-top:1px solid rgba(221,239,232,.35); }
+.hero-menu a{ display:flex; flex-direction:column; justify-content:space-between; gap:6px; padding:22px 16px 6px 0; font-size:.92rem; color:rgba(250,249,246,.85); transition:color .25s; }
+.hero-menu a b{ font:400 1.3rem var(--display); color:var(--gold-l); }
+.hero-menu a:hover{ color:var(--paper); }
+.hero-menu a:hover b{ text-decoration:underline; text-underline-offset:5px; }
+/* Faixa de atendimento */
+.band{ background:var(--gold-l); color:var(--deep); padding:0; }
+.band .wrap{ display:grid; grid-template-columns:1.1fr 1fr 1fr; }
+.band-i{ padding:38px 28px; border-left:1px solid rgba(6,75,77,.25); }
+.band-i:first-child{ border-left:0; padding-left:0; }
+.band h2{ font-size:1.15rem; font-family:var(--body); font-weight:600; margin-bottom:8px; }
+.band .big{ font-family:var(--display); font-size:2rem; line-height:1.15; color:var(--deep); }
+.band p{ color:var(--deep); font-size:.95rem; }
+
+/* Serviços: carta de preços */
+.servicos .wrap{ display:grid; grid-template-columns:.7fr 1.3fr; gap:80px; align-items:start; }
+.sticky{ position:sticky; top:110px; }
+.servicos h2,.dif h2,.gal h2,.dep h2,.ag h2,.contato h2{ font-size:clamp(2.6rem,5vw,4.2rem); letter-spacing:-.02em; margin-bottom:20px; }
+.menu-row{ display:grid; grid-template-columns:1fr auto; gap:6px 24px; padding:30px 0; border-bottom:1px solid rgba(6,75,77,.22); transition:padding-left .3s; }
+.menu-row:first-child{ border-top:1px solid rgba(6,75,77,.22); }
+.menu-row:hover{ padding-left:14px; }
+.menu-row h3{ font-size:1.9rem; color:var(--wine); }
+.price{ font-family:var(--display); font-size:1.9rem; color:var(--deep); text-align:right; white-space:nowrap; }
+.menu-row p{ font-size:.95rem; grid-column:1; }
+.chips{ display:flex; gap:8px; margin-top:12px; grid-column:1; }
+.chip{ font-size:.75rem; padding:4px 14px; border:1px solid var(--gold); border-radius:999px; color:var(--wine); }
+.menu-row .go{ grid-column:2; grid-row:2; align-self:end; justify-self:end; display:inline-flex; align-items:center; min-height:44px; padding:0 24px; font-size:.88rem; font-weight:500; color:var(--wine); border:1px solid var(--wine); border-radius:999px; transition:background .25s,color .25s; }
+.menu-row .go:hover{ background:var(--wine); color:var(--paper); }
+.aval{ display:inline-block; padding:8px 18px; border:1px solid var(--gold); background:var(--blush); font-family:var(--display); font-style:italic; font-size:1.2rem; color:var(--wine); white-space:normal; }
+
+/* Diferencial */
+.dif{ background:var(--blush); }
+.dif .wrap{ max-width:980px; }
+.dif-row{ display:grid; grid-template-columns:1fr 1fr; gap:30px; padding:28px 0; border-top:1px solid rgba(6,75,77,.28); align-items:baseline; }
+.dif-row h3{ font-size:1.8rem; color:var(--wine); }
+
+/* Galeria: colagem */
+.gal-g{ display:grid; grid-template-columns:repeat(6,1fr); grid-auto-rows:150px; gap:16px; margin-top:56px; }
+.gt{ display:flex; align-items:flex-end; padding:16px; font-size:.8rem; font-style:italic; color:var(--soft); border:1px solid rgba(6,75,77,.18); }
+.gt:nth-child(1){ grid-column:1/4; grid-row:span 3; border-radius:999px 999px 0 0; background:linear-gradient(170deg,var(--blush),var(--cream)); justify-content:center; padding-bottom:30px; }
+.gt:nth-child(2){ grid-column:4/7; grid-row:span 2; background:linear-gradient(140deg,var(--gold-l),var(--blush)); }
+.gt:nth-child(3){ grid-column:4/5; grid-row:span 1; background:var(--wine); color:var(--blush); border-radius:50%; align-items:center; justify-content:center; padding:0; text-align:center; }
+.gt:nth-child(4){ grid-column:5/7; grid-row:span 1; background:var(--deep); color:var(--blush); }
+.gt:nth-child(5){ grid-column:1/3; grid-row:span 2; background:linear-gradient(140deg,var(--cream),var(--gold-l)); border-radius:0 0 999px 999px; align-items:center; justify-content:center; }
+.gt:nth-child(6){ grid-column:3/7; grid-row:span 2; background:linear-gradient(140deg,var(--blush),var(--paper)); }
+
+/* Depoimentos */
+.dep{ background:var(--deep); color:var(--cream); }
+.dep h2{ color:var(--cream); } .dep p.flag{ color:var(--gold-l); font-style:italic; font-size:.88rem; margin-bottom:56px; }
+.q{ display:grid; grid-template-columns:1fr 220px; gap:40px; padding:40px 0; border-top:1px solid rgba(221,239,232,.3); align-items:end; }
+.q blockquote{ margin:0; font-family:var(--display); font-style:italic; font-size:clamp(1.5rem,2.8vw,2.3rem); line-height:1.3; }
+.q cite{ font-style:normal; font-size:.85rem; color:var(--gold-l); }
+
+/* Agendamento */
+.ag .wrap{ display:grid; grid-template-columns:.8fr 1.2fr; gap:70px; align-items:start; }
+.side{ border-left:2px solid var(--gold); padding:4px 0 4px 24px; margin-top:34px; }
+.side h3{ font-size:1.5rem; color:var(--wine); margin-bottom:8px; } .side p{ margin-bottom:20px; font-size:.95rem; }
+form{ display:grid; grid-template-columns:1fr 1fr; gap:22px; background:var(--paper); padding:44px; border:1px solid rgba(82,102,101,.5); }
+.f{ display:flex; flex-direction:column; gap:7px; } .f.full{ grid-column:1/-1; }
+label{ font-size:.82rem; color:var(--wine); font-weight:500; }
+input,select{ font:400 .98rem var(--body); padding:12px 2px; border:0; border-bottom:1px solid rgba(6,75,77,.4); background:transparent; color:var(--ink); border-radius:0; outline:none; transition:border-color .25s; }
+input:focus,select:focus{ border-bottom-color:var(--gold); }
+.send{ grid-column:1/-1; margin-top:8px; width:100%; padding:19px; font-size:1.02rem; }
+
+/* Contato */
+.contato{ background:var(--wine); color:var(--cream); }
+.contato h2{ color:var(--cream); }
+.c-grid{ display:grid; grid-template-columns:1.3fr 1fr 1fr; gap:50px; margin-top:50px; }
+.c-grid h4{ font:500 .85rem var(--body); color:var(--gold-l); margin:0 0 10px; }
+.c-grid p,.c-grid a{ color:rgba(250,249,246,.9); font-size:1.02rem; } .c-grid a:hover{ color:var(--gold-l); }
+.c-grid .addr{ font-family:var(--display); font-size:2rem; line-height:1.2; color:var(--cream); }
+footer{ background:var(--deep); color:var(--cream); padding:50px 0 34px; }
+.f-in{ display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:20px; }
+.f-logo{ font-family:var(--display); font-size:1.5rem; letter-spacing:.04em; }
+.f-links{ display:flex; gap:26px; list-style:none; margin:0; padding:0; font-size:.9rem; } .f-links a{ opacity:.75; } .f-links a:hover{ opacity:1; }
+.copy{ text-align:center; margin-top:30px; font-size:.78rem; color:rgba(250,249,246,.45); max-width:none; }
+
+/* Botões flutuantes */
+.fb{ position:fixed; right:22px; z-index:90; width:56px; height:56px; border-radius:50%; display:flex; align-items:center; justify-content:center; box-shadow:0 8px 22px rgba(0,0,0,.25); transition:transform .3s,box-shadow .3s; }
+.fb:hover{ transform:scale(1.08) rotate(-4deg); box-shadow:0 10px 26px rgba(0,0,0,.3); }
+.fb svg{ width:25px; height:25px; }
+.fb-wa{ background:#064B4D; bottom:calc(22px + env(safe-area-inset-bottom,0px)); }
+.fb-ig{ background:linear-gradient(135deg,var(--gold),var(--wine) 55%,var(--deep)); bottom:calc(90px + env(safe-area-inset-bottom,0px)); }
+.fb-map{ width:auto; height:56px; padding:0 22px 0 18px; border-radius:30px; gap:10px; background:var(--cream); color:var(--deep); border:1px solid var(--gold); font:500 .88rem var(--body); white-space:nowrap; bottom:calc(158px + env(safe-area-inset-bottom,0px)); }
+.fb-map svg{ width:20px; height:20px; color:var(--wine); flex-shrink:0; }
+
+@media (max-width:980px){
+  .links,.nav-cta{ display:none; } .burger{ display:block; }
+  .hero .wrap,.servicos .wrap,.ag .wrap{ grid-template-columns:1fr; gap:48px; }
+  .arch{ margin:0 auto; max-width:300px; } .arch-cap{ left:-10px; }
+  .sticky{ position:static; }
+  .band .wrap{ grid-template-columns:1fr; } .band-i,.band-i:first-child{ border-left:0; border-top:1px solid rgba(6,75,77,.25); padding:26px 0; } .band-i:first-child{ border-top:0; }
+  .c-grid{ grid-template-columns:1fr 1fr; } .c-grid>div:first-child{ grid-column:1/-1; }
+  .q{ grid-template-columns:1fr; gap:16px; }
+}
+@media (max-width:640px){
+  .hero-menu-g{ grid-template-columns:1fr 1fr; } .hero-menu{ margin-top:48px; }
+  section{ padding:84px 0; } .wrap{ padding:0 22px; }
+  .hero{ padding-top:104px; } .hero-actions .btn{ width:100%; }
+  .menu-row{ grid-template-columns:1fr; } .price{ text-align:left; } .menu-row .go{ grid-column:1; grid-row:auto; justify-self:start; margin-top:14px; }
+  .dif-row{ grid-template-columns:1fr; gap:8px; }
+  .gal-g{ grid-template-columns:1fr 1fr; grid-auto-rows:130px; }
+  .gt:nth-child(n){ grid-column:auto; grid-row:span 2; }
+  .gt:nth-child(3){ grid-row:span 1; border-radius:50%; } .gt:nth-child(4){ grid-row:span 1; }
+  form{ grid-template-columns:1fr; padding:28px 22px; }
+  .c-grid{ grid-template-columns:1fr; }
+  .f-in{ flex-direction:column; text-align:center; }
+  .fb{ width:50px; height:50px; right:16px; } .fb svg{ width:22px; height:22px; }
+  .fb-wa{ bottom:calc(16px + env(safe-area-inset-bottom,0px)); } .fb-ig{ bottom:calc(76px + env(safe-area-inset-bottom,0px)); }
+  .fb-map{ width:auto; height:46px; padding:0 16px 0 13px; font-size:.8rem; bottom:calc(136px + env(safe-area-inset-bottom,0px)); } .fb-map svg{ width:18px; height:18px; }
+}
+/* ===== Identidade clara: branco quente, bege, verde-água, petróleo ===== */
+:focus-visible,.hero :focus-visible,.dep :focus-visible,.contato :focus-visible,header:not(.solid) :focus-visible,.mmenu :focus-visible{ outline-color:var(--teal); }
+footer :focus-visible{ outline-color:var(--mint); }
+.skip{ background:var(--teal); color:#fff; }
+header{ color:var(--graphite); }
+header.solid{ background:rgba(250,249,246,.94); box-shadow:0 1px 0 rgba(38,53,54,.1); }
+.btn{ border-color:var(--teal); }
+.btn-fill,.btn-wine,.nav-cta,header.solid .nav-cta{ background:var(--teal); color:#fff; border-color:var(--teal); }
+.btn-fill:hover,.btn-wine:hover,.nav-cta:hover,header.solid .nav-cta:hover{ background:var(--graphite); border-color:var(--graphite); color:#fff; }
+.btn-line,.contato .btn-line{ background:transparent; border-color:var(--teal); color:var(--teal); }
+.btn-line:hover,.contato .btn-line:hover{ background:var(--teal); color:#fff; border-color:var(--teal); }
+.menu-row .go:hover{ color:#fff; }
+.mmenu{ background:var(--ivory); color:var(--graphite); }
+.mclose{ color:var(--graphite); }
+.hero{ background:var(--ivory); color:var(--graphite); }
+.hero::after{ border-color:rgba(6,75,77,.14); }
+.hero h1 span+span{ color:var(--teal); }
+.hero-tag{ color:var(--teal); }
+.hero p.d{ color:var(--muted); }
+.arch{ background:linear-gradient(170deg,var(--mint),var(--ivory) 75%); border-color:rgba(6,75,77,.35); }
+.arch-in{ border-color:rgba(6,75,77,.25); }
+.arch-cap{ background:var(--teal); color:#fff; }
+.hero-menu-g{ border-top-color:rgba(6,75,77,.22); }
+.hero-menu a{ color:var(--graphite); }
+.hero-menu a b{ color:var(--teal); }
+.hero-menu a:hover{ color:var(--teal); }
+.band{ background:var(--mint); }
+.servicos{ background:var(--ivory); }
+.menu-row,.menu-row:first-child{ border-color:rgba(6,75,77,.18); }
+.chip{ border-color:var(--sage); color:var(--teal); }
+.aval{ background:var(--mint); border-color:var(--teal); color:var(--teal); }
+.dif{ background:var(--beige); }
+.dif-row{ border-top-color:rgba(6,75,77,.2); }
+.gal{ background:var(--ivory); }
+.gt{ border-color:rgba(123,133,128,.4); color:var(--muted); }
+.gt:nth-child(4){ background:var(--beige); color:var(--muted); }
+.gt:nth-child(3){ background:var(--teal); color:#fff; }
+.dep{ background:var(--mint); color:var(--graphite); }
+.dep h2{ color:var(--graphite); }
+.dep p.flag{ color:var(--muted); }
+.q{ border-top-color:rgba(6,75,77,.22); }
+.q blockquote{ color:var(--graphite); }
+.q cite{ color:var(--teal); }
+.ag{ background:var(--beige); }
+form{ background:#fff; border-color:rgba(6,75,77,.2); }
+.side{ border-left-color:var(--teal); }
+.contato{ background:var(--ivory); color:var(--graphite); }
+.contato h2{ color:var(--graphite); }
+.c-grid h4{ color:var(--teal); }
+.c-grid p,.c-grid a{ color:var(--graphite); }
+.c-grid a:not(.btn):hover{ color:var(--teal); }
+.c-grid .addr{ color:var(--graphite); }
+footer{ background:var(--teal); color:var(--ivory); }
+.f-links a{ color:var(--ivory); }
+.copy{ color:rgba(250,249,246,.65); }
+.fb{ border:1px solid rgba(6,75,77,.25); box-shadow:0 8px 22px rgba(38,53,54,.18); }
+.fb:hover{ box-shadow:0 10px 26px rgba(38,53,54,.26); }
+.fb-wa{ background:var(--teal); border-color:var(--teal); }
+.fb-ig{ background:#fff; border-color:var(--teal); }
+.fb-map{ background:#fff; color:var(--teal); border-color:var(--teal); }
+.fb-map svg{ color:var(--teal); }
+@media (prefers-reduced-motion:reduce){ html{ scroll-behavior:auto; } *{ animation-duration:.01ms !important; transition-duration:.01ms !important; } .rv{ opacity:1; } }
+</style>
+</head>
+<body>
+
+<a class="skip" href="#conteudo">Ir para o conteúdo</a>
+<header id="hd">
+  <nav aria-label="Principal">
+    <a href="#inicio" class="logo">Spazio Velluto</a>
+    <ul class="links">
+      <li><a href="#atendimento">Horário</a></li>
+      <li><a href="#servicos">Serviços</a></li>
+      <li><a href="#diferencial">Diferencial</a></li>
+      <li><a href="#galeria">Galeria</a></li>
+      <li><a href="#depoimentos">Depoimentos</a></li>
+      <li><a href="#contato">Contato</a></li>
+    </ul>
+    <a href="#agendamento" class="btn btn-line nav-cta">Agendar horário</a>
+    <button class="burger" id="burger" aria-label="Abrir menu" aria-expanded="false" aria-controls="mmenu"><span></span><span></span></button>
+  </nav>
+</header>
+<div class="mmenu" id="mmenu">
+  <button class="mclose" id="mclose" aria-label="Fechar menu">&times;</button>
+  <a href="#atendimento">Horário</a><a href="#servicos">Serviços</a><a href="#diferencial">Diferencial</a><a href="#galeria">Galeria</a><a href="#depoimentos">Depoimentos</a><a href="#agendamento">Agendar</a><a href="#contato">Contato</a>
+</div>
+
+<main id="conteudo">
+<section class="hero" id="inicio">
+  <div class="wrap">
+    <div>
+      <h1><span>Spazio</span><span>Velluto</span></h1>
+      <p class="hero-tag">Beleza, cuidado e estilo em cada detalhe.</p>
+      <p class="d">Atendimento próximo e cuidadoso com Raissa Fischer, com dedicação e carinho por cada cliente que passa pela cadeira.</p>
+      <div class="hero-actions">
+        <a href="#agendamento" class="btn btn-fill">Agendar horário</a>
+        <a href="#galeria" class="btn btn-line">Conheça nosso trabalho</a>
+      </div>
+    </div>
+    <div class="arch">
+      <div class="arch-in">
+        <svg viewBox="0 0 240 300" fill="none" stroke="#7B8580" stroke-width="1.4" stroke-linecap="round" aria-hidden="true">
+          <path d="M90 20c30 50-30 90-10 150 14 44 60 66 110 60"/><path d="M60 40c40 60-40 100-14 168 18 46 70 64 130 54"/><path d="M118 30c20 50-26 84-8 140 12 40 46 60 86 56"/>
+          <circle cx="120" cy="150" r="42" stroke="#064B4D"/><text x="120" y="162" text-anchor="middle" font-family="Bodoni Moda, Georgia, serif" font-size="34" font-style="italic" fill="#064B4D" stroke="none">SV</text>
+        </svg>
+      </div>
+      <div class="arch-cap">Raissa Fischer</div>
+    </div>
+  </div>
+  <div class="hero-menu">
+    <div class="hero-menu-g">
+      <a href="#servicos"><span>Escova</span><b>R$ 60,00</b></a>
+      <a href="#servicos"><span>Corte</span><b>R$ 75,00</b></a>
+      <a href="#servicos"><span>Tratamento personalizado</span><b>R$ 80,00</b></a>
+      <a href="#servicos"><span>Repigmentação do Moreno Iluminado</span><b>R$ 100,00</b></a>
+      <a href="#servicos"><span>Progressiva</span><b>Sob avaliação</b></a>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="atendimento">
+  <div class="wrap">
+    <div class="band-i"><h2>Horário de atendimento</h2><div class="big">Segunda a Sexta<br>14h às 20h</div></div>
+    <div class="band-i"><h2>Onde estamos</h2><p>Rua Conde de Passé, 47<br>Fortaleza, Blumenau - SC</p></div>
+    <div class="band-i"><h2>WhatsApp</h2><p>+55 47 98420-3311</p></div>
+  </div>
+</section>
+
+<section class="servicos" id="servicos">
+  <div class="wrap">
+    <div class="sticky rv">
+      <h2>Serviços</h2>
+      <p>Conheça os serviços do Spazio Velluto e agende direto pelo WhatsApp.</p>
+    </div>
+    <div class="rv">
+      <div class="menu-row">
+        <h3>Escova</h3><div class="price">R$ 60,00</div>
+        <p>Lisa ou modelada, com acabamento cuidadoso para valorizar o seu cabelo.</p>
+        <div class="chips"><span class="chip">Lisa</span><span class="chip">Modelada</span></div>
+        <a href="https://wa.me/5547984203311" class="go btn-agendar" data-service="Escova (lisa ou modelada)">Agendar</a>
+      </div>
+      <div class="menu-row">
+        <h3>Corte</h3><div class="price">R$ 75,00</div>
+        <p>Corte reto ou em U, pensado para acompanhar o estilo e o formato desejado.</p>
+        <div class="chips"><span class="chip">Reto</span><span class="chip">Em U</span></div>
+        <a href="https://wa.me/5547984203311" class="go btn-agendar" data-service="Corte (reto ou em U)">Agendar</a>
+      </div>
+      <div class="menu-row">
+        <h3>Tratamento personalizado</h3><div class="price">R$ 80,00</div>
+        <p>Cuidados pensados de acordo com as necessidades específicas de cada cabelo.</p>
+        <a href="https://wa.me/5547984203311" class="go btn-agendar" data-service="Tratamento personalizado">Agendar</a>
+      </div>
+      <div class="menu-row">
+        <h3>Repigmentação do Moreno Iluminado</h3><div class="price">R$ 100,00</div>
+        <p>Revitalização da cor para devolver profundidade, brilho e harmonia ao moreno iluminado.</p>
+        <a href="https://wa.me/5547984203311" class="go btn-agendar" data-service="Repigmentação do Moreno Iluminado">Agendar</a>
+      </div>
+      <div class="menu-row">
+        <h3>Progressiva</h3><div class="price"><span class="aval">Valor mediante avaliação</span></div>
+        <a href="https://wa.me/5547984203311" class="go btn-agendar" data-service="Progressiva">Agendar</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="dif" id="diferencial">
+  <div class="wrap">
+    <h2>O que guia cada atendimento</h2>
+    <div class="dif-row"><h3>Atendimento personalizado</h3><p>Cada cliente é ouvida com atenção antes de qualquer procedimento.</p></div>
+    <div class="dif-row"><h3>Dedicação aos detalhes</h3><p>Cuidado em cada etapa, do primeiro contato ao resultado final.</p></div>
+    <div class="dif-row"><h3>Aprendizado constante</h3><p>Estudo e prática diária para evoluir a cada novo atendimento.</p></div>
+    <div class="dif-row"><h3>Técnicas em aperfeiçoamento</h3><p>Cursos regulares para trazer novidades da área capilar.</p></div>
+    <div class="dif-row"><h3>Ambiente acolhedor</h3><p>Um espaço pensado para que cada visita seja tranquila e agradável.</p></div>
+    <div class="dif-row"><h3>Cuidado com cada cliente</h3><p>Relações de confiança construídas atendimento após atendimento.</p></div>
+  </div>
+</section>
+
+<section class="gal" id="galeria">
+  <div class="wrap">
+    <h2>Trabalhos realizados</h2>
+    <p>Espaços reservados para as fotos reais dos trabalhos — substitua cada bloco pela imagem correspondente.</p>
+    <div class="gal-g rv">
+      <div class="gt">Foto 1 — corte</div><div class="gt">Foto 2 — escova</div><div class="gt">Foto 3</div>
+      <div class="gt">Foto 4 — finalização</div><div class="gt">Foto 5 — antes/depois</div><div class="gt">Foto 6 — ambiente</div>
+    </div>
+  </div>
+</section>
+
+<section class="dep" id="depoimentos">
+  <div class="wrap">
+    <h2>Depoimentos</h2>
+    <p class="flag">Textos de exemplo — substitua pelos depoimentos reais das suas clientes.</p>
+    <div class="q rv"><blockquote>“Me senti muito bem cuidada durante todo o atendimento, super recomendo.”</blockquote><cite>Cliente Exemplo 1 — depoimento fictício</cite></div>
+    <div class="q rv"><blockquote>“Resultado lindo e um atendimento bem atencioso do início ao fim.”</blockquote><cite>Cliente Exemplo 2 — depoimento fictício</cite></div>
+    <div class="q rv"><blockquote>“Gostei muito do cuidado com os detalhes e da atenção durante a escova.”</blockquote><cite>Cliente Exemplo 3 — depoimento fictício</cite></div>
+  </div>
+</section>
+
+<section class="ag" id="agendamento">
+  <div class="wrap">
+    <div>
+      <h2>Agende seu horário</h2>
+      <p>Preencha os dados e envie sua solicitação direto pelo WhatsApp.</p>
+      <div class="side">
+        <h3>Prefere falar direto?</h3>
+        <p>Chame a Raissa no WhatsApp para combinar o melhor horário.</p>
+        <a href="https://wa.me/5547984203311" id="waDirectBtn" class="btn btn-wine">Chamar no WhatsApp</a>
+      </div>
+    </div>
+    <form id="bookingForm">
+      <div class="f"><label for="nome">Nome</label><input type="text" id="nome" placeholder="Seu nome" autocomplete="name" required></div>
+      <div class="f"><label for="telefone">Telefone / WhatsApp</label><input type="tel" id="telefone" placeholder="(00) 00000-0000" autocomplete="tel" inputmode="tel" required></div>
+      <div class="f full"><label for="servico">Serviço desejado</label>
+        <select id="servico"><option>Escova</option><option>Corte</option><option>Tratamento personalizado</option><option>Repigmentação do Moreno Iluminado</option><option>Progressiva</option></select></div>
+      <div class="f"><label for="data">Data desejada</label><input type="date" id="data"></div>
+      <div class="f"><label for="horarioDesejado">Horário desejado</label><input type="time" id="horarioDesejado"></div>
+      <div class="f full"><label for="obs">Observação</label><input type="text" id="obs" placeholder="Alguma observação? (opcional)"></div>
+      <p class="status" id="formStatus" role="status" aria-live="polite"></p>
+      <button type="submit" class="btn btn-wine send">Agendar pelo WhatsApp</button>
+    </form>
+  </div>
+</section>
+
+<section class="contato" id="contato">
+  <div class="wrap">
+    <h2>Venha nos visitar</h2>
+    <div class="c-grid">
+      <div><h4>Endereço</h4><p class="addr">Rua Conde de Passé, 47<br>Fortaleza, Blumenau - SC</p>
+        <p style="margin-top:14px">Segunda a Sexta, 14h às 20h</p>
+        <a href="https://www.google.com/maps/search/?api=1&query=Rua%20Conde%20de%20Pass%C3%A9%2C%2047%2C%20Fortaleza%2C%20Blumenau%20-%20SC" target="_blank" rel="noopener" class="btn btn-line" style="margin-top:22px">Como chegar</a></div>
+      <div><h4>WhatsApp</h4><p><a href="https://wa.me/5547984203311" id="waContactLink">+55 47 98420-3311</a></p></div>
+      <div><h4>Instagram</h4><p><a href="https://www.instagram.com/spazio.velluto/" target="_blank" rel="noopener">@spazio.velluto</a></p><p style="margin-top:14px">Raissa Fischer</p></div>
+    </div>
+  </div>
+</section>
+
+</main>
+<footer>
+  <div class="wrap">
+    <div class="f-in">
+      <div class="f-logo">Spazio Velluto</div>
+      <ul class="f-links">
+        <li><a href="https://www.instagram.com/spazio.velluto/" target="_blank" rel="noopener">Instagram</a></li>
+        <li><a href="https://wa.me/5547984203311" id="waFooterLink">WhatsApp</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </div>
+    <p class="copy">© <span id="year"></span> Spazio Velluto — Raissa Fischer. Todos os direitos reservados.</p>
+  </div>
+</footer>
+
+<a href="https://www.google.com/maps/search/?api=1&query=Rua%20Conde%20de%20Pass%C3%A9%2C%2047%2C%20Fortaleza%2C%20Blumenau%20-%20SC" target="_blank" rel="noopener" id="mapFloat" class="fb fb-map" aria-label="Como me encontrar no Google Maps">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7-6.2-7-11a7 7 0 0114 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.6"/></svg>Como me encontrar
+</a>
+<a href="https://www.instagram.com/spazio.velluto/" target="_blank" rel="noopener" id="igFloat" class="fb fb-ig" aria-label="Abrir Instagram do Spazio Velluto">
+  <svg viewBox="0 0 24 24" fill="none" stroke="#064B4D" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.3" cy="6.7" r="1"/></svg>
+</a>
+<a href="https://wa.me/5547984203311?text=Ol%C3%A1%2C%20tudo%20bem%3F%20Gostaria%20de%20conhecer%20o%20seu%20trabalho" id="waFloat" class="fb fb-wa" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24" fill="#fff"><path d="M12 2C6.5 2 2 6.4 2 11.9c0 2.1.6 4 1.7 5.7L2 22l4.6-1.6c1.6.9 3.4 1.4 5.4 1.4 5.5 0 10-4.4 10-9.9S17.5 2 12 2zm5.9 14c-.3.7-1.5 1.4-2.1 1.5-.6.1-1.2.2-3.9-.8-3.3-1.3-5.4-4.6-5.6-4.9-.2-.3-1.3-1.7-1.3-3.2 0-1.5.8-2.3 1.1-2.6.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .6.5.3.7.9 2.2 1 2.4.1.2.1.4 0 .6-.1.2-.2.4-.4.6-.2.2-.4.5-.5.6-.2.2-.4.4-.2.7.3.5 1.1 1.7 2.3 2.8 1.6 1.4 2.9 1.8 3.4 2 .4.2.7.2.9-.1.3-.3.9-1 1.1-1.4.2-.3.4-.3.7-.2.3.1 1.8.8 2.1 1 .3.1.5.2.6.3.1.2.1.9-.2 1.6z"/></svg>
+</a>
+
+<script>
+  // Número real do Spazio Velluto: +55 47 98420-3311 (DDI + DDD, apenas números).
+  const WHATSAPP_NUMBER = "5547984203311";
+  const wa = m => `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(m)}`;
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  const hd = document.getElementById('hd');
+  const onScroll = () => hd.classList.toggle('solid', window.scrollY > 40);
+  window.addEventListener('scroll', onScroll); onScroll();
+
+  const mm = document.getElementById('mmenu');
+  const bg = document.getElementById('burger');
+  bg.addEventListener('click', () => { mm.classList.add('open'); bg.setAttribute('aria-expanded','true'); });
+  document.getElementById('mclose').addEventListener('click', () => { mm.classList.remove('open'); bg.setAttribute('aria-expanded','false'); });
+  mm.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { mm.classList.remove('open'); bg.setAttribute('aria-expanded','false'); }));
+
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); }), { threshold: .12 });
+  document.querySelectorAll('.rv').forEach(el => io.observe(el));
+
+  const generic = "Olá! Vim pelo site do Spazio Velluto e gostaria de agendar um horário. Gostaria de saber mais sobre os serviços disponíveis.";
+  ['waContactLink','waFooterLink'].forEach(id => { const el = document.getElementById(id); if (el) el.href = wa(generic); });
+  document.getElementById('waFloat').href = wa("Olá, tudo bem? Gostaria de conhecer o seu trabalho");
+  document.getElementById('waDirectBtn').href = wa("Olá, tudo bem? Gostaria de conhecer o seu trabalho.");
+  document.querySelectorAll('.btn-agendar').forEach(b => {
+    b.href = wa(`Olá! Vim pelo site do Spazio Velluto e gostaria de agendar o serviço: ${b.dataset.service}.`);
+  });
+
+  document.getElementById('bookingForm').addEventListener('submit', e => {
+    e.preventDefault();
+    const v = id => document.getElementById(id).value.trim();
+    let msg = "Olá! Vim pelo site do Spazio Velluto e gostaria de agendar um horário.\n\n";
+    msg += `Nome: ${v('nome')}\n`;
+    if (v('telefone')) msg += `Telefone: ${v('telefone')}\n`;
+    msg += `Serviço: ${v('servico')}\n`;
+    if (v('data')) msg += `Data desejada: ${v('data')}\n`;
+    if (v('horarioDesejado')) msg += `Horário desejado: ${v('horarioDesejado')}\n`;
+    if (v('obs')) msg += `Observação: ${v('obs')}\n`;
+    msg += "\nObrigado!";
+    document.getElementById('formStatus').textContent = 'Abrindo o WhatsApp com os seus dados. Se não abrir, toque em “Chamar no WhatsApp”.';
+    window.open(wa(msg), '_blank', 'noopener');
+  });
+</script>
+</body>
+</html>
